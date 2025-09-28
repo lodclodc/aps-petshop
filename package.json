@@ -1,0 +1,36 @@
+{
+  "license": "0BSD",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "~53.0.22",
+    "expo-status-bar": "~2.2.3",
+    "react": "19.0.0",
+    "react-native": "0.79.6",
+    "expo-sqlite": "~15.2.14",
+    "@tensorflow/tfjs": "^4.21.0",
+    "@expo/vector-icons": "^14.1.0",
+    "react-native-screens": "~4.11.1",
+    "@react-navigation/core": "^6.0.0",
+    "react-native-calendars": "^1.1296.0",
+    "@react-navigation/stack": "^6.0.0",
+    "react-native-reanimated": "~3.17.4",
+    "@react-navigation/drawer": "^6.6.2",
+    "@react-navigation/native": "^6.0.0",
+    "react-native-vector-icons": "^9.2.0",
+    "@react-native-picker/picker": "2.11.1",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-safe-area-context": "5.4.0",
+    "@react-native-community/datetimepicker": "8.4.1",
+    "@react-native-async-storage/async-storage": "2.1.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}
