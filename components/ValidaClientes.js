@@ -256,7 +256,24 @@ function AgendamentoHora({ navigation, route }) {
     "21:00",
   ];
 
+  const tempo = new Date();
+  const hora_hoje = tempo.getHours().toString().padStart(2, "0");
+  const minuto_hoje = tempo.getMinutes().toString().padStart(2, "0");
+  const hora_agora = `${hora_hoje}:${minuto_hoje}`;
+  const data_dia = tempo.getDate().toString().padStart(2, "0");
+  const dia_selecionado = dataSelecionada.split("-")[2];
+  
+
   const handleAgendar = () => {
+   
+    if (dia_selecionado < data_dia) {
+    alert("Selecione uma data futura!");
+    return;
+    }
+    if (dia_selecionado === data_dia && horaSelecionada <= hora_agora) {
+    alert("Selecione um horário futuro!");
+    return;
+    }
     if (!service) {
       alert("Selecione um serviço!");
       return;
@@ -265,6 +282,7 @@ function AgendamentoHora({ navigation, route }) {
       alert("Selecione um horário para continuar!");
       return;
     }
+    
 
     setModalVisible(true);
   };

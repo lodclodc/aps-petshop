@@ -75,8 +75,8 @@ export default function MenuPrincipal({ navigation }) {
       );
       if (confirmDelete) confirmarExclusao();
     } else {
-      Alert.alert(
-        "Confirmar Exclusão",
+      alert(
+      
         "Tem certeza de que deseja excluir este agendamento?",
         [
           { text: "Cancelar", style: "cancel" },
@@ -90,6 +90,13 @@ export default function MenuPrincipal({ navigation }) {
   useEffect(() => {
     validaCliente();
   }, []);
+  
+  useFocusEffect(
+    React.useCallback(() => {
+      validaCliente();
+    }, [])
+  );
+
 
   return (
     <View style={globalStyles.container}>
@@ -100,7 +107,7 @@ export default function MenuPrincipal({ navigation }) {
         renderItem={({ item }) => (
           <View style={{ flexDirection: "row", gap: 16, alignItems: "center" }}>
             <Text style={globalStyles.listText}>
-              {`Cliente: ${item.cliente}\nAnimal: ${item.pet}\nServiço: ${item.servico}\nHorário: ${item.dia}`}
+              {`Cliente: ${item.cliente}\nAnimal: ${item.pet}\nServiço: ${item.servico}\nHorário: ${item.hora}`}
             </Text>
             <TouchableOpacity onPress={() => toggleComplete(item.id)}>
               <AntDesign
