@@ -73,10 +73,10 @@ export default function MenuPrincipal({ navigation }) {
       const confirmDelete = window.confirm(
         "Tem certeza que deseja excluir o agendamento?"
       );
-      if (confirmDelete) confirmarExclusao();
+        if (confirmDelete) confirmarExclusao();
     } else {
-      alert(
-      
+      Alert.alert(
+        "Confirmação",
         "Tem certeza de que deseja excluir este agendamento?",
         [
           { text: "Cancelar", style: "cancel" },
